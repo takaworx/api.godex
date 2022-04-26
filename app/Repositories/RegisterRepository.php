@@ -11,10 +11,11 @@ class RegisterRepository
         $this->user = $user;
     }
 
-    public function register($name, $email, $password)
+    public function register($first_name, $last_name, $email, $password)
     {
         $user = $this->user->newInstance();
-        $user->name = $name;
+        $user->first_name = $first_name;
+        $user->last_name = $last_name;
         $user->email = $email;
         $user->password = $password;
         $user->save();
