@@ -9,6 +9,8 @@ Route::group(['middleware' => ['guest']], function () {
 
 Route::group(['middleware' => ['auth:api']], function () {
     Route::get('user', 'UserController@user');
+    Route::put('user', 'UserController@update');
+    
     Route::put('like', 'PokemonController@like');
     Route::put('dislike', 'PokemonController@dislike');
     Route::put('favorite', 'PokemonController@favorite');
