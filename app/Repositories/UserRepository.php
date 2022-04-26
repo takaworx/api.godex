@@ -22,4 +22,12 @@ class UserRepository
 
         return $user;
     }
+
+    public function paginate(array $excluded_user_ids = [], int $per_page = 10)
+    {
+        return $this->user
+            ->newQuery()
+            ->whereNotIn('id', $excluded_user_ids)
+            ->paginate($per_page);
+    }
 }
