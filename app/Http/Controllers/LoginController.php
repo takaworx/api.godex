@@ -22,7 +22,9 @@ class LoginController extends Controller
         );
 
         if ($result instanceof \Exception) {
-            return $this->response()->badRequest(null, $result->getMessage());
+            return $this->response()->badRequest([
+                'email' => $result->getMessage()
+            ]);
         }
 
         return $this->response()->success($result);
