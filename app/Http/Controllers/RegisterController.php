@@ -18,8 +18,6 @@ class RegisterController extends Controller
     {
         try {
             $user = $this->registerRepo->register(
-                $request->input('first_name'),
-                $request->input('last_name'),
                 $request->input('email'),
                 $request->input('password')
             );
