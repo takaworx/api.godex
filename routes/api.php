@@ -12,6 +12,8 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::get('user/{id}', 'UserController@findUser');
     Route::put('user', 'UserController@update');
     Route::get('users', 'UserController@paginate');
+    
+    Route::post('logout', 'UserController@logout');
 
     Route::put('like', 'PokemonController@like');
     Route::put('dislike', 'PokemonController@dislike');

@@ -65,4 +65,16 @@ class UserController extends Controller
 
         return $this->response()->success($result);
     }
+
+    public function logout(Request $request)
+    {
+        try {
+            $token = $request->user()->token();
+            $token->revoke();
+        } catch (\Exception $e) {
+            return $this->response()->unexpectedError(null, $e->getMessage());
+        }
+
+        return $this->response()->success();
+    }
 }
