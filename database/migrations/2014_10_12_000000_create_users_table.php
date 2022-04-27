@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('display_photo')->nullable();
             $table->rememberToken();
-            $table->timestamp('birthday')->nullable();
+            $table->date('birthday')->nullable();
             $table->timestamps();
         });
     }
