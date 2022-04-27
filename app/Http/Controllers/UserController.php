@@ -24,6 +24,17 @@ class UserController extends Controller
         return $this->response()->success($request->user());
     }
 
+    public function findUser($id)
+    {
+        try {
+            $result = $this->userRepo->find($id);
+        } catch (\Exception $e) {
+            return $this->response()->unexpectedError($e->getMessage());
+        }
+
+        return $this->response()->success($result);
+    }
+
     public function update(UpdateRequest $request)
     {
         try {

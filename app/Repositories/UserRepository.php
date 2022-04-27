@@ -23,6 +23,13 @@ class UserRepository
         return $user;
     }
 
+    public function find($user_id)
+    {
+        return $this->user
+            ->newQuery()
+            ->find($user_id);
+    }
+
     public function paginate(array $excluded_user_ids = [], int $per_page = 10)
     {
         return $this->user

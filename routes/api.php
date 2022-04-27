@@ -9,6 +9,7 @@ Route::group(['middleware' => ['guest']], function () {
 
 Route::group(['middleware' => ['auth:api']], function () {
     Route::get('user', 'UserController@user');
+    Route::get('user/{id}', 'UserController@findUser');
     Route::put('user', 'UserController@update');
     Route::get('users', 'UserController@paginate');
 
