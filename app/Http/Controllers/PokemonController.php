@@ -22,7 +22,7 @@ class PokemonController extends Controller
                 $request->input('pokemon_id')
             );
         } catch (\Exception $e) {
-            return $this->response()->badRequest($e->getMessage());
+            return $this->response()->badRequest(null, $e->getMessage());
         }
 
         return $this->response()->success($request->user()->fresh());
@@ -36,7 +36,7 @@ class PokemonController extends Controller
                 $request->input('pokemon_id')
             );
         } catch (\Exception $e) {
-            return $this->response()->badRequest($e->getMessage());
+            return $this->response()->badRequest(null, $e->getMessage());
         }
 
         return $this->response()->success($request->user()->fresh());
@@ -50,7 +50,7 @@ class PokemonController extends Controller
                 $request->input('pokemon_id')
             );
         } catch (\Exception $e) {
-            return $this->response()->badRequest($e->getMessage());
+            return $this->response()->badRequest(null, $e->getMessage());
         }
 
         return $this->response()->success($request->user()->fresh());
