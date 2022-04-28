@@ -11,3 +11,9 @@ Follow the steps below to install the app
 - complete
 
 this should cover the API part
+
+## Seeder
+
+Optionally, you can also run the seeder to populate the users table
+
+- run `php artisan db:seed`

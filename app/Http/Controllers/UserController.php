@@ -56,9 +56,7 @@ class UserController extends Controller
     public function paginate(Request $request)
     {
         try {
-            $result = $this->userRepo->paginate([
-                $request->user()->id
-            ]);
+            $result = $this->userRepo->paginate();
         } catch (\Exception $e) {
             return $this->response()->unexpectedError($e->getMessage());
         }
