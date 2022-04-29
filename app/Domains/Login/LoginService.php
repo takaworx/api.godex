@@ -1,9 +1,9 @@
-<?php namespace App\Repositories;
+<?php namespace App\Domains\Login;
 
 use App\Entities\HttpClient;
 use App\Entities\PassportHelper;
 
-class LoginRepository
+class LoginService
 {
     private $http;
     private $client;

@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Domains\Login\LoginService;
 use App\Http\Requests\LoginRequest;
-use App\Repositories\LoginRepository;
 
 class LoginController extends Controller
 {
-    private $loginRepo;
+    private $loginService;
 
-    public function __construct(LoginRepository $loginRepo)
+    public function __construct(LoginService $loginService)
     {
-        $this->loginRepo = $loginRepo;
+        $this->loginService = $loginService;
     }
 
     public function login(LoginRequest $request)
     {
-        $result = $this->loginRepo->login(
+        $result = $this->loginService->login(
             $request->input('email'),
             $request->input('password')
         );
