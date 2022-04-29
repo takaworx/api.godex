@@ -16,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->register(\App\Domains\Login\LoginServiceProvider::class);
         $this->app->register(\App\Domains\Register\RegisterServiceProvider::class);
         $this->app->register(\App\Domains\User\UserServiceProvider::class);
+        $this->app->register(\App\Domains\Pokemon\PokemonServiceProvider::class);
     }
 
     /**

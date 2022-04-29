@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\PokemonRepository;
+use App\Domains\Pokemon\PokemonService;
 use Illuminate\Http\Request;
 
 class PokemonController extends Controller
 {
-    private $pokemonRepository;
+    private $pokemonService;
 
-    public function __construct(PokemonRepository $pokemonRepository)
+    public function __construct(PokemonService $pokemonService)
     {
-        $this->pokemonRepository = $pokemonRepository;
+        $this->pokemonService = $pokemonService;
     }
 
     public function like(Request $request)
     {
         try {
-            $this->pokemonRepository->like(
+            $this->pokemonService->like(
                 $request->user()->id,
                 $request->input('pokemon_id')
             );
@@ -31,7 +31,7 @@ class PokemonController extends Controller
     public function dislike(Request $request)
     {
         try {
-            $this->pokemonRepository->dislike(
+            $this->pokemonService->dislike(
                 $request->user()->id,
                 $request->input('pokemon_id')
             );
@@ -45,7 +45,7 @@ class PokemonController extends Controller
     public function favorite(Request $request)
     {
         try {
-            $this->pokemonRepository->favorite(
+            $this->pokemonService->favorite(
                 $request->user()->id,
                 $request->input('pokemon_id')
             );

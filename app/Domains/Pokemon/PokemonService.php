@@ -1,10 +1,10 @@
-<?php namespace App\Repositories;
+<?php namespace App\Domains\Pokemon;
 
 use App\Models\Dislike;
 use App\Models\Favorite;
 use App\Models\Like;
 
-class PokemonRepository
+class PokemonService
 {
     const MAX_LIKE = 3;
     const MAX_DISLIKE = 3;
