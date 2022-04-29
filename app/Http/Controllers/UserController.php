@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Domains\User\UserService;
 use App\Http\Requests\User\UpdateRequest;
-use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    private $userRepo;
+    private $userService;
 
-    public function __construct(UserRepository $userRepo)
+    public function __construct(UserService $userService)
     {
-        $this->userRepo = $userRepo;    
+        $this->userService = $userService;    
     }
 
     public function user(Request $request)
@@ -27,7 +27,7 @@ class UserController extends Controller
     public function findUser($id)
     {
         try {
-            $result = $this->userRepo->find($id);
+            $result = $this->userService->find($id);
         } catch (\Exception $e) {
             return $this->response()->unexpectedError($e->getMessage());
         }
@@ -38,7 +38,7 @@ class UserController extends Controller
     public function update(UpdateRequest $request)
     {
         try {
-            $result = $this->userRepo->update(
+            $result = $this->userService->update(
                 $request->user()->id,
                 $request->only([
                     'first_name',
@@ -56,7 +56,7 @@ class UserController extends Controller
     public function paginate(Request $request)
     {
         try {
-            $result = $this->userRepo->paginate();
+            $result = $this->userService->paginate();
         } catch (\Exception $e) {
             return $this->response()->unexpectedError($e->getMessage());
         }

@@ -1,8 +1,8 @@
-<?php namespace App\Repositories;
+<?php namespace App\Domains\User;
 
 use App\Models\User;
 
-class UserRepository
+class UserService
 {
     private $user;
 
