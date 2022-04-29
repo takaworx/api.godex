@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Domains\Register\RegisterService;
 use App\Http\Requests\RegisterRequest;
-use App\Repositories\RegisterRepository;
 
 class RegisterController extends Controller
 {
-    private $registerRepo;
+    private $registerService;
 
-    public function __construct(RegisterRepository $registerRepo)
+    public function __construct(RegisterService $registerService)
     {
-        $this->registerRepo = $registerRepo;
+        $this->registerService = $registerService;
     }
 
     public function register(RegisterRequest $request)
     {
         try {
-            $user = $this->registerRepo->register(
+            $user = $this->registerService->register(
                 $request->input('email'),
                 $request->input('password')
             );

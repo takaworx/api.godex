@@ -13,7 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->register(\App\Domains\Login\LoginServiceProvider::class);
+        $this->app->register(\App\Domains\Register\RegisterServiceProvider::class);
     }
 
     /**

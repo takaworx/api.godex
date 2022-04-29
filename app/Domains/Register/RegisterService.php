@@ -1,8 +1,8 @@
-<?php namespace App\Repositories;
+<?php namespace App\Domains\Register;
 
 use App\Models\User;
 
-class RegisterRepository
+class RegisterService
 {
     private $user;
 
