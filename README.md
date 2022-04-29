@@ -17,3 +17,9 @@ this should cover the API part
 Optionally, you can also run the seeder to populate the users table
 
 - run `php artisan db:seed`
+
+## Tests
+
+You can run test using the following command:
+
+- run `php artisan test`
