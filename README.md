@@ -1,3 +1,11 @@
+# GoDex API
+
+Api for the GoDex app.
+
+## Demo
+
+https://godex.takaworx.com
+
 ## Installation
 
 Follow the steps below to install the app
